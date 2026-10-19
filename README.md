@@ -44,7 +44,7 @@ from the ad link.
 
 The palette (crimson, gold, cream) and `images/logo.png` were taken from the school's
 Mashujaa Day poster. The Mashujaa Day section in `index.html` is seasonal; delete the
-`<!-- MASHUJAA DAY -->` section after October. The poster says "Milan Academy" while
-the page says "Milan Academies"; confirm which name the school uses.
+`<!-- MASHUJAA DAY -->` section after October. The school's name is
+**Milan Academies**.
 
 Local preview: `python3 -m http.server 8080` (form submissions only work once deployed on Netlify).
