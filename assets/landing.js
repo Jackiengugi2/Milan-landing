@@ -23,6 +23,24 @@
   /* ---------- Footer year ---------- */
   all('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  /* ---------- Contact links: filled from LANDING.phone / LANDING.whatsapp ----------
+     <a data-contact="tel">, <a data-contact="wa">, and any [data-needs-contact] block
+     stay hidden until the number is set, so the page never ships a dead link. */
+  var waBase = C.whatsapp ? 'https://wa.me/' + C.whatsapp : '';
+  all('[data-contact]').forEach(function (a) {
+    var kind = a.getAttribute('data-contact');
+    if (kind === 'tel' && C.phone) {
+      a.href = 'tel:+' + C.phone.replace(/\D/g, '').replace(/^0/, '254');
+      if (!a.textContent.trim()) a.textContent = C.phone;
+    } else if (kind === 'wa' && waBase) {
+      a.href = waBase + '?text=' + encodeURIComponent(a.getAttribute('data-text') || C.waIntro || '');
+    } else {
+      a.hidden = true;
+    }
+  });
+  if (!C.phone) all('[data-needs-contact]').forEach(function (el) { el.hidden = true; });
+  all('[data-phone-text]').forEach(function (el) { el.textContent = C.phone || ''; });
+
   /* ---------- Photo slots: images/<slot>.jpg, placeholder until it exists ---------- */
   all('figure.slot[data-slot]').forEach(function (fig, i) {
     var img = document.createElement('img');
@@ -60,7 +78,7 @@
   if (document.body.getAttribute('data-page') === 'thanks') {
     if (lead) {
       if (lead.name) all('[data-thanks-name]').forEach(function (el) { el.textContent = ', ' + lead.name; });
-      if (lead.wa) all('[data-wa-continue]').forEach(function (a) { a.href = lead.wa; });
+      all('[data-wa-continue]').forEach(function (a) { if (lead.wa) a.href = lead.wa; else a.hidden = true; });
       if (!lead.tracked) {
         track('Lead', { content_name: C.campaign });
         lead.tracked = true;
@@ -157,7 +175,7 @@
       store(LEAD_KEY, record);
       track('Lead', { content_name: C.campaign });
       all('[data-thanks-name]', card).forEach(function (el) { el.textContent = record.name ? ', ' + record.name : ''; });
-      all('[data-wa-continue]', card).forEach(function (a) { a.href = record.wa; });
+      all('[data-wa-continue]', card).forEach(function (a) { if (record.wa) a.href = record.wa; else a.hidden = true; });
       card.classList.add('sent');
       card.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
@@ -207,6 +225,7 @@
       var a = document.querySelector('a[href*="wa.me/"]');
       number = a ? (a.href.match(/wa\.me\/(\d+)/) || [])[1] : '';
     }
+    if (!number) return '';
     var lines = [], seen = {};
     all('[data-summary]', form).forEach(function (input) {
       if (seen[input.name] || input.closest('[hidden]')) return;
@@ -225,8 +244,8 @@
     var box = document.createElement('div');
     box.className = 'form-error';
     box.setAttribute('role', 'alert');
-    box.innerHTML = 'Sorry, we couldn’t send that just now. Please try again, or <a href="' + wa +
-      '" target="_blank" rel="noopener">send your details on WhatsApp</a>.';
+    box.innerHTML = 'Sorry, we couldn’t send that just now. Please try again' + (wa ? ', or <a href="' + wa +
+      '" target="_blank" rel="noopener">send your details on WhatsApp</a>.' : '.');
     var submit = form.querySelector('[type=submit]');
     submit.parentNode.insertBefore(box, submit);
   }
