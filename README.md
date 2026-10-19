@@ -42,7 +42,9 @@ from the ad link.
 | `whatsapp`, `waIntro` | Number and opening line for the WhatsApp hand-off. |
 | `campaign` | Campaign code saved with every enquiry. |
 
-The colour palette is provisional; swap the `:root` tokens in both pages once the school
-confirms its brand colours.
+The palette (crimson, gold, cream) and `images/logo.png` were taken from the school's
+Mashujaa Day poster. The Mashujaa Day section in `index.html` is seasonal; delete the
+`<!-- MASHUJAA DAY -->` section after October. The poster says "Milan Academy" while
+the page says "Milan Academies"; confirm which name the school uses.
 
 Local preview: `python3 -m http.server 8080` (form submissions only work once deployed on Netlify).

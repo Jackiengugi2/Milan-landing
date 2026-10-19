@@ -292,3 +292,18 @@ section { padding: clamp(56px, 8vw, 96px) 0; }
   html { scroll-behavior: auto; }
   .btn, .sticky-cta { transition: none; }
 }
+/* ---------- Mashujaa Day greeting ---------- */
+.mashujaa { background: var(--mash-bg, var(--soft)); position: relative; overflow: hidden; }
+.mashujaa::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px;
+  background: linear-gradient(90deg, #111 0 33.3%, #fff 33.3% 35%, #BB0000 35% 65%, #fff 65% 66.7%, #006B3F 66.7%);
+}
+.mashujaa-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.mashujaa-media img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
+.mashujaa h2 .pre { display: block; font-size: .55em; letter-spacing: .3em; text-transform: uppercase; color: var(--accent-ink); }
+.flag-rule { display: flex; gap: 8px; margin: 1.1rem 0 1.3rem; }
+.flag-rule i { width: 56px; height: 7px; border-radius: 4px; background: #111; }
+.flag-rule i:nth-child(2) { background: #BB0000; } .flag-rule i:nth-child(3) { background: #006B3F; }
+.mashujaa .lead strong { color: var(--brand-ink); }
+@media (max-width: 820px) { .mashujaa-grid { grid-template-columns: 1fr; } .mashujaa-media { max-width: 420px; } }
+.sticky-cta:has(> [hidden]) { grid-template-columns: 1fr; }
