@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milan Academies Admissions</title>
+<meta name="description" content="Milan Academies, Kikuyu: experiential learning and integrated play that help every child understand deeply and love school. Register your interest and book a visit.">
+<meta property="og:title" content="Milan Academies · Where play and learning are the same thing">
+<meta property="og:description" content="Hands-on, experiential learning, purposeful play, music and STEM in a safe, caring school on Kikuyu Link Road. Admissions open.">
+<meta property="og:image" content="images/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/landing.css">
+<style>
+  /* PROVISIONAL palette (no official Milan brand colours on file): calm teal + sunshine + coral.
+     Swap these tokens once the school confirms its colours. */
+  :root {
+    --brand: #0F7C78; --brand-ink: #0D4B4A; --on-brand: #fff;
+    --accent: #F5B841; --accent-ink: #B4461F; --on-accent: #0D4B4A;
+    --coral: #E8664A;
+    --soft: #EDF7F5; --hero-bg: radial-gradient(circle at 10% 90%, #FDEBC4 0, transparent 40%), radial-gradient(circle at 90% 10%, #FBDCD3 0, transparent 35%), #EDF7F5;
+    --text: #1d2b2b; --muted: #4c5c5c; --foot-bg: #0d3b3a;
+    --font-head: "Baloo 2", system-ui, sans-serif; --font-body: "Nunito Sans", system-ui, sans-serif;
+  }
+  h1, h2 { letter-spacing: -.005em; }
+  .dots { display: flex; gap: 5px; }
+  .dots i { width: 12px; height: 12px; border-radius: 50%; }
+  .dots i:nth-child(1) { background: var(--brand); } .dots i:nth-child(2) { background: var(--accent); } .dots i:nth-child(3) { background: var(--coral); }
+  .play-equation { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin: 2rem 0 0; font-family: var(--font-head); font-weight: 800; font-size: clamp(1.1rem, 2.4vw, 1.5rem); color: var(--brand-ink); }
+  .play-equation span { background: #fff; border-radius: 999px; padding: .35em 1em; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+  .play-equation b { color: var(--coral); }
+  .day-list { list-style: none; padding: 0; margin: 1.4rem 0 0; display: grid; gap: 14px; }
+  .day-list li { display: grid; grid-template-columns: 92px 1fr; gap: 14px; align-items: start; }
+  .day-list .when { font-weight: 800; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-ink); padding-top: 3px; }
+  .day-list strong { display: block; color: var(--brand-ink); font-family: var(--font-head); font-size: 1.1rem; }
+  .day-list p { margin: 0; color: var(--muted); font-size: .96rem; }
+</style>
+<script>
+  window.LANDING = {
+    school: "Milan Academies",
+    whatsapp: "254115044201",
+    waIntro: "Hello Milan Academies, I have just registered my interest on your website and would like to book a school visit.",
+    formEndpoint: "",          // optional: also copy each enquiry to a Google Sheet / Privyr webhook (Netlify Forms already stores them)
+    metaPixelId: "",           // paste the Milan Meta Pixel ID here
+    thankYouUrl: "thank-you.html",   // registrations go here after submitting
+    campaign: "MILAN_LEAD_IF_AllSchool_PROS_OCT26"
+  };
+</script>
+</head>
+<body class="form-first">
+<header class="topbar">
+  <div class="wrap">
+    <a class="brandmark" href="#top" aria-label="Milan Academies home">
+      <!-- Replace with the official logo: <img src="images/logo.png" alt="Milan Academies"> -->
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="name">Milan Academies<small>Kikuyu Link Road</small></span>
+    </a>
+    <div class="top-actions">
+      <a class="top-phone" href="tel:+254115044201">+254 115 044201</a>
+      <a class="btn btn-primary btn-small" href="#register">Book a visit</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Admissions open · Kikuyu</span>
+        <h1>Where play and learning are the same thing.</h1>
+        <p class="lead">At Milan Academies, children learn by doing: exploring, building, singing and discovering. Purposeful play and real experiences help them understand deeply, and love coming to school every day.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#register">Book a school visit</a>
+          <a class="btn btn-ghost" href="#approach">How children learn here</a>
+        </div>
+        <ul class="chips">
+          <li>Experiential learning</li>
+          <li>Integrated play</li>
+          <li>Music &amp; STEM</li>
+        </ul>
+      </div>
+      <div class="hero-media">
+        <figure class="slot" data-slot="hero" data-label="Hero: child absorbed in a hands-on play activity (portrait/square)"></figure>
+        <div class="hero-badge"><strong>Children who love school</strong>Curious, happy learners who can’t wait to tell you what they discovered today.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER -->
+  <section class="register" id="register">
+    <div class="wrap register-grid">
+      <div class="register-aside">
+        <span class="eyebrow">Register your interest</span>
+        <h2>See your child light up at Milan</h2>
+        <p class="lead">Share a few details and we’ll arrange a visit so your child can try a play station and meet our teachers.</p>
+        <ul class="assure">
+          <li><span class="ic">🧡</span><div><b>A personal reply</b>Our admissions team will call or WhatsApp you.</div></li>
+          <li><span class="ic">📄</span><div><b>Clear fee information</b>Shared privately for your child’s class.</div></li>
+          <li><span class="ic">🔒</span><div><b>Your details stay private</b>Used only by Milan Academies to help with your enquiry.</div></li>
+        </ul>
+        <figure class="slot slot-wide" data-slot="register-side" data-label="Happy learners in the play area"></figure>
+      </div>
+
+      <div class="form-card">
+        <form name="milan-admissions" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="website" data-register novalidate>
+          <input type="hidden" name="form-name" value="milan-admissions">
+          <input type="hidden" name="campaign">
+          <input type="hidden" name="page_url">
+          <input type="hidden" name="utm_source">
+          <input type="hidden" name="utm_medium">
+          <input type="hidden" name="utm_campaign">
+          <input type="hidden" name="utm_content">
+          <input type="hidden" name="utm_term">
+          <input type="hidden" name="fbclid">
+          <h3>Book a school visit</h3>
+          <p class="sub">Fields marked * help us prepare for your visit.</p>
+          <div class="fgrid">
+            <div class="field full">
+              <label for="parent_name">Parent / guardian full name *</label>
+              <input id="parent_name" name="parent_name" type="text" autocomplete="name" required data-summary="Parent">
+              <div class="err">Please tell us your name.</div>
+            </div>
+            <div class="field">
+              <label for="phone">Phone (WhatsApp) *</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="07XX XXX XXX" required data-summary="Phone">
+              <div class="err">Please enter a valid phone number.</div>
+            </div>
+            <div class="field">
+              <label for="email">Email <span class="opt">(optional)</span></label>
+              <input id="email" name="email" type="email" autocomplete="email">
+              <div class="err">Please check your email address.</div>
+            </div>
+            <div class="field">
+              <label for="child_name">Child’s first name <span class="opt">(optional)</span></label>
+              <input id="child_name" name="child_name" type="text" data-summary="Child">
+            </div>
+            <div class="field">
+              <label for="grade">Class joining *</label>
+              <select id="grade" name="grade" required data-summary="Class">
+                <option value="">Choose a class</option>
+                <optgroup label="Early Years"><option>Playgroup</option><option>PP1</option><option>PP2</option></optgroup>
+                <optgroup label="Primary"><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option></optgroup>
+                <option>Not sure yet, please advise</option>
+              </select>
+              <div class="err">Please choose a class.</div>
+            </div>
+            <div class="field">
+              <label for="visit_date">Preferred visit date <span class="opt">(optional)</span></label>
+              <input id="visit_date" name="visit_date" type="date" data-summary="Visit date">
+            </div>
+            <div class="field">
+              <label for="interest">What matters most to you?</label>
+              <select id="interest" name="interest" data-summary="Interested in">
+                <option value="">Choose one</option>
+                <option>Play-based early years</option><option>Experiential learning</option><option>Music</option><option>STEM &amp; robotics</option><option>Inclusion &amp; support</option><option>Stretching an advanced learner</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="area">Estate / area <span class="opt">(for transport)</span></label>
+              <input id="area" name="area" type="text" placeholder="e.g. Thogoto, Kinoo, Dagoretti" data-summary="Area">
+            </div>
+            <div class="field">
+              <label for="heard">How did you hear about us?</label>
+              <select id="heard" name="heard"><option value="">Choose one</option><option>Facebook</option><option>Instagram</option><option>WhatsApp</option><option>A friend or family</option><option>Drove past the school</option><option>Other</option></select>
+            </div>
+            <div class="field">
+              <label for="current_school">Current school <span class="opt">(optional)</span></label>
+              <input id="current_school" name="current_school" type="text">
+            </div>
+            <div class="field full">
+              <label for="notes">How does your child learn best? <span class="opt">(optional)</span></label>
+              <textarea id="notes" name="notes" placeholder="Tell us a little about your child, or any questions you have"></textarea>
+            </div>
+            <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="field full">
+              <label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>I’m happy for Milan Academies to contact me by phone, SMS or WhatsApp about admissions.</span></label>
+              <div class="err">Please tick this so we can get back to you.</div>
+            </div>
+            <div class="full">
+              <button class="btn btn-primary" type="submit">Book my visit</button>
+              <p class="form-note">We usually reply within one working day.</p>
+            </div>
+          </div>
+        </form>
+        <div class="thanks" role="status">
+          <div class="big">🌟</div>
+          <h3>Thank you<span data-thanks-name></span>!</h3>
+          <p>Your details have reached Milan Academies. Our admissions team will call or WhatsApp you soon to arrange your visit.</p>
+          <p>Prefer to chat right away?</p>
+          <a class="btn btn-wa" data-wa-continue href="https://wa.me/254115044201" target="_blank" rel="noopener">Continue on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WE HEAR YOU -->
+  <section class="hear">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">We understand</span>
+        <h2>You want your child happy <em>and</em> learning. So do we.</h2>
+        <p class="lead">Here are the honest answers to what parents ask us most.</p>
+      </div>
+      <div class="hear-grid">
+        <div class="worry">
+          <div class="q">Isn’t play just a break from learning?</div>
+          <p>Not here. Every play station, game and project has a learning goal behind it, so children build real skills while they’re having fun.</p>
+        </div>
+        <div class="worry">
+          <div class="q">Will my child keep up academically?</div>
+          <p>Play sits inside a clear structure of circle time, routines and guided lessons. Learners who are ready are stretched further, and every child is supported to grow.</p>
+        </div>
+        <div class="worry">
+          <div class="q">My child learns differently. Will they fit in?</div>
+          <p>Inclusion is part of how we teach. Lessons are adapted so every learner can take part fully, without ever being singled out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="features" id="approach">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">The Milan way</span>
+        <h2>Learning they can touch, feel and remember</h2>
+        <p class="lead">Children understand best when they experience something for themselves, rather than being told the answer.</p>
+        <div class="play-equation"><span>Hands-on experience</span><b>+</b><span>Purposeful play</span><b>=</b><span>Learning that lasts</span></div>
+      </div>
+      <div class="feature-grid" style="--cols:4">
+        <article class="feature">
+          <figure class="slot" data-slot="feature-play-in-class" data-label="Playgroup 'play-in-class': sensory / building station in use"></figure>
+          <div class="body"><h3>Play-in-class</h3><p>Blocks, sand, water and dress-up stations, each one carefully designed to teach early maths, language and teamwork.</p></div>
+        </article>
+        <article class="feature">
+          <figure class="slot" data-slot="feature-experiential" data-label="Learners working through an experiential project"></figure>
+          <div class="body"><h3>Experiential projects</h3><p>Learners investigate, try, fail safely and try again, building confidence and real understanding.</p></div>
+        </article>
+        <article class="feature">
+          <figure class="slot" data-slot="feature-music" data-label="Music room: learner's hands on an instrument"></figure>
+          <div class="body"><h3>Music at the heart</h3><p>Rhythm, singing and instruments are a core part of the Milan experience, not an extra.</p></div>
+        </article>
+        <article class="feature">
+          <figure class="slot" data-slot="feature-stem" data-label="STEM / robotics session"></figure>
+          <div class="body"><h3>STEM &amp; robotics</h3><p>Building, coding and problem-solving that turns curious children into confident young thinkers.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- A DAY AT MILAN -->
+  <section>
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">A day at Milan</span>
+        <h2>Structured enough to feel safe, free enough to feel joyful</h2>
+        <ul class="day-list">
+          <li><span class="when">Arrival</span><div><strong>A warm hello</strong><p>Teachers greet every child by name as they settle in for the day.</p></div></li>
+          <li><span class="when">Circle time</span><div><strong>Together first</strong><p>Songs, sharing and a gentle plan for the day ahead.</p></div></li>
+          <li><span class="when">Learning</span><div><strong>Play with purpose</strong><p>Hands-on stations and guided lessons, with the teacher at the children’s level.</p></div></li>
+          <li><span class="when">Outdoors</span><div><strong>Run, climb, imagine</strong><p>Safe, supervised play areas built for every kind of play.</p></div></li>
+          <li><span class="when">Home time</span><div><strong>Full of stories</strong><p>Children head home eager to tell you what they made and discovered.</p></div></li>
+        </ul>
+      </div>
+      <div class="mosaic">
+        <figure class="slot" data-slot="day-teacher-floor" data-label="Teacher at floor level with Playgroup learners (portrait)"></figure>
+        <figure class="slot" data-slot="day-circle" data-label="Circle time"></figure>
+        <figure class="slot" data-slot="day-outdoor" data-label="Outdoor play area in use"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAND -->
+  <section class="band center">
+    <div class="wrap">
+      <p class="promise">“We want every child to genuinely enjoy school, because children who love learning never stop.”</p>
+      <p class="lead" style="margin-inline:auto">International standards, a nurturing culture and teachers who make every child feel capable.</p>
+      <a class="btn btn-accent" href="#register">Come and see the Milan way</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Parents often ask</span><h2>Questions, answered</h2></div>
+      <div class="faq">
+        <details><summary>What does “integrated play” mean?</summary><p>Play isn’t separate from lessons. It’s how lessons happen, especially in the early years. A sand table teaches measuring, a building corner teaches shapes and teamwork, and a pretend shop teaches numbers and language.</p></details>
+        <details><summary>What is experiential learning?</summary><p>Learners work through real tasks and projects themselves instead of just being told the answer. They remember more, think more independently and grow in confidence.</p></details>
+        <details><summary>What are the school fees?</summary><p>Our fee structure varies by class and is shared directly with parents. Tell us the class your child is joining in the form, or call/WhatsApp +254 115 044201.</p></details>
+        <details><summary>Do you offer transport?</summary><p>Share your estate in Thogoto, Kinoo, Dagoretti or nearby, and we’ll confirm whether our transport covers your route, plus the charges.</p></details>
+        <details><summary>Can I visit with my child?</summary><p>Yes, please do! Choose a date in the form or call +254 115 044201. Your child is welcome to join a play station while you talk with our teachers.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <h3>Milan Academies</h3>
+      <p>Nurturing every child’s potential through experiential learning and integrated play, on Kikuyu Link Road.</p>
+    </div>
+    <div>
+      <h3>Talk to us</h3>
+      <ul>
+        <li>Call / WhatsApp: <a href="tel:+254115044201">+254 115 044201</a></li>
+        <li><a href="mailto:milanacademies@gmail.com">milanacademies@gmail.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Find us</h3>
+      <ul>
+        <li>Kikuyu Link Road, Kikuyu</li>
+        <li>Serving Thogoto, Kinoo, Dagoretti &amp; surrounding areas</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap small">© <span data-year></span> Milan Academies · Nurturing every child’s potential</div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn btn-wa" href="https://wa.me/254115044201?text=Hello%20Milan%20Academies%2C%20I%27d%20like%20to%20ask%20about%20admissions" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-primary" href="#register">Book a visit</a>
+</div>
+
+<script src="assets/landing.js"></script>
+</body>
+</html>
