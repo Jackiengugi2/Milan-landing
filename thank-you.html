@@ -5,117 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Thank You · Milan Academies</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#C8102E">
+<link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/landing.css">
 <style>
-  /* PROVISIONAL palette: keep in sync with index.html. */
   :root {
-    --brand: #0F7C78; --brand-ink: #0D4B4A; --on-brand: #fff;
-    --accent: #F5B841; --accent-ink: #B4461F; --on-accent: #0D4B4A;
-    --coral: #E8664A;
-    --soft: #EDF7F5; --hero-bg: radial-gradient(circle at 10% 90%, #FDEBC4 0, transparent 40%), radial-gradient(circle at 90% 10%, #FBDCD3 0, transparent 35%), #EDF7F5;
-    --text: #1d2b2b; --muted: #4c5c5c; --foot-bg: #0d3b3a;
-    --font-head: "Baloo 2", system-ui, sans-serif; --font-body: "Nunito Sans", system-ui, sans-serif;
+    --brand: #C8102E; --brand-ink: #2A1D17; --on-brand: #fff;
+    --accent: #B8962E; --accent-ink: #8C6D17; --on-accent: #2A1D17;
+    --soft: #FAF6EE; --hero-bg: #FAF6EE; --line: #eadfca;
+    --text: #2A1D17; --muted: #5a4d45; --foot-bg: #2A1D17;
+    --brandbar: linear-gradient(90deg, #B8962E, #C8102E 50%, #B8962E);
+    --font-head: "Playfair Display", Georgia, serif; --font-body: "Lora", Georgia, serif;
   }
-  .dots { display: flex; gap: 5px; }
-  .dots i { width: 12px; height: 12px; border-radius: 50%; }
-  .dots i:nth-child(1) { background: var(--brand); } .dots i:nth-child(2) { background: var(--accent); } .dots i:nth-child(3) { background: var(--coral); }
+  .eyebrow, .btn, .lp-trust { font-family: "Montserrat", system-ui, sans-serif; }
+  .eyebrow { letter-spacing: .25em; }
+  .topbar { background: rgba(250,246,238,.95); }
 </style>
 <script>
   window.LANDING = {
     school: "Milan Academies",
-    metaPixelId: "",           // same Pixel ID as index.html, so the Lead is counted here
-    campaign: "MILAN_LEAD_IF_AllSchool_PROS_OCT26"
+    phone: "0115 044 201",
+    whatsapp: "254115044201",
+    waIntro: "Hello Milan Academies, I have just registered my interest on your website and would like to book a school visit.",
+    formEndpoint: "",          // optional: also copy each enquiry to a Google Sheet / Privyr webhook (Netlify Forms already stores them)
+    metaPixelId: "",           // paste the school's Meta Pixel ID here (same ID on index.html and thank-you.html)
+    thankYouUrl: "thank-you.html",
+    campaign: "MILAN_LEAD_LP_AllSchool_PROS_OCT26"
   };
 </script>
 </head>
-<body data-page="thanks">
+<body class="lp" data-page="thanks">
+<div class="brandbar" aria-hidden="true"></div>
 <header class="topbar">
   <div class="wrap">
     <a class="brandmark" href="index.html" aria-label="Milan Academies home">
-      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="name">Milan Academies<small>Kikuyu Link Road</small></span>
+      <img src="images/logo.png" alt="Milan Academies, Explore · Discover · Learn" width="141" height="48">
     </a>
-    <div class="top-actions"><a class="top-phone" href="tel:+254115044201">+254 115 044201</a></div>
+    <div class="top-actions"><a class="top-phone" data-contact="tel"></a></div>
   </div>
 </header>
 
 <main>
-  <section class="hero thanks-hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="tick-badge" aria-hidden="true">✓</div>
-        <span class="eyebrow">Registration received</span>
-        <h1>Thank you<span data-thanks-name></span>! A day of discovery is waiting for your child.</h1>
-        <p class="lead">Your details have reached Milan Academies. Our admissions team will call or WhatsApp you within one working day to arrange your visit, and your child is welcome to come and play too.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-wa" data-wa-continue href="https://wa.me/254115044201" target="_blank" rel="noopener">Say hello on WhatsApp</a>
-          <a class="btn btn-ghost" href="tel:+254115044201">Call +254 115 044201</a>
-        </div>
-      </div>
-      <div class="hero-media">
-        <figure class="slot" data-slot="thanks-hero" data-label="Thank-you header: joyful child mid-discovery at a play station"></figure>
-        <div class="hero-badge"><strong>Play with purpose</strong>Where play and learning are the same thing.</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <section class="lp-hero thanks-hero" style="padding-bottom:clamp(40px,6vw,64px)">
     <div class="wrap">
-      <div class="center"><span class="eyebrow">What happens next</span><h2>Your path to Milan</h2></div>
-      <div class="steps next-steps">
-        <div class="step"><span class="time">Within 1 working day</span><h3>We call you</h3><p>We answer your questions and find a visit time that suits your family.</p></div>
-        <div class="step"><span class="time">Your visit</span><h3>Your child tries it out</h3><p>While you meet our teachers, your child can join a play station and explore.</p></div>
-        <div class="step"><span class="time">When you’re ready</span><h3>Welcome to Milan</h3><p>We share fees for your child’s class and guide you through admission.</p></div>
+      <div class="tick-badge" aria-hidden="true" style="margin-inline:auto">✓</div>
+      <span class="eyebrow">Details received</span>
+      <h1>Thank you<span data-thanks-name></span>!</h1>
+      <p>Your details have reached Milan Academies. Our admissions team will call or WhatsApp you within one working day to arrange your visit.</p>
+      <div class="hero-ctas" style="justify-content:center">
+        <a class="btn btn-wa" data-wa-continue href="#" target="_blank" rel="noopener">Chat on WhatsApp now</a>
+        <a class="btn btn-ghost" data-contact="tel">Call us</a>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap">
-      <div class="center">
-        <span class="eyebrow">The Milan way</span>
-        <h2>Activities your child will love</h2>
-        <p class="lead">Every activity has a learning goal behind it, so fun and real understanding go hand in hand.</p>
-      </div>
-      <div class="feature-grid" style="--cols:4">
-        <article class="feature activity">
-          <figure class="slot" data-slot="activity-play-stations" data-label="Play-in-class: blocks / sand & water table"></figure>
-          <div class="body"><span class="tag">Integrated play</span><h3>Play stations</h3><p>Blocks, sand, water and dress-up corners that teach maths, language and teamwork.</p></div>
-        </article>
-        <article class="feature activity">
-          <figure class="slot" data-slot="activity-experiential" data-label="Experiential learning project"></figure>
-          <div class="body"><span class="tag">Experiential</span><h3>Learn by doing</h3><p>Projects where children try, discover and work things out for themselves.</p></div>
-        </article>
-        <article class="feature activity">
-          <figure class="slot" data-slot="activity-music" data-label="Music room: group singing / instruments"></figure>
-          <div class="body"><span class="tag">Music</span><h3>Rhythm and song</h3><p>Singing, rhythm games and instruments as a core part of every week.</p></div>
-        </article>
-        <article class="feature activity">
-          <figure class="slot" data-slot="activity-stem" data-label="STEM / robotics building session"></figure>
-          <div class="body"><span class="tag">STEM &amp; robotics</span><h3>Build and solve</h3><p>Hands-on building and problem-solving that grows confident young thinkers.</p></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="band center">
-    <div class="wrap">
-      <p class="promise">“Children who love learning never stop. We can’t wait to meet yours.”</p>
-      <a class="btn btn-accent" href="index.html">Back to Milan Academies</a>
     </div>
   </section>
 </main>
 
-<footer class="foot">
-  <div class="wrap foot-grid">
-    <div><h3>Milan Academies</h3><p>Nurturing every child’s potential through experiential learning and integrated play.</p></div>
-    <div><h3>Talk to us</h3><ul><li>Call / WhatsApp: <a href="tel:+254115044201">+254 115 044201</a></li><li><a href="mailto:milanacademies@gmail.com">milanacademies@gmail.com</a></li></ul></div>
-    <div><h3>Find us</h3><ul><li>Kikuyu Link Road, Kikuyu</li><li>Serving Thogoto, Kinoo, Dagoretti &amp; surrounding areas</li></ul></div>
-  </div>
-  <div class="wrap small">© <span data-year></span> Milan Academies · Nurturing every child’s potential</div>
+<footer class="foot-mini">
+  <p>Kikuyu Link Road, Kikuyu</p><p><a href="mailto:milanacademies@gmail.com">milanacademies@gmail.com</a></p><p>Call / WhatsApp <a data-contact="tel"></a></p>
+  <p>© <span data-year></span> Milan Academies &middot; Explore · Discover · Learn</p>
 </footer>
 
 <script src="assets/landing.js"></script>
